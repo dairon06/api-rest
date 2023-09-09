@@ -2,7 +2,7 @@ import {personajesDB} from "../models/personajes.js";
 
 let idCount = personajesDB.length;
 
-export const getPersonajes = (req, res) => {
+export const obtenerPersonajes = (req, res) => {
   if (req.query.nombre) {
     // Buscar el personaje con el mismo nombre que llega por parametro con el metodo find
     const personaje = personajesDB.filter(
@@ -22,7 +22,7 @@ export const getPersonajes = (req, res) => {
   res.json(personajesDB);
 };
 
-export const getPersonajesById = (req, res) => {
+export const obtenerPersonajesPorId = (req, res) => {
   // Obtener el id
   const id = parseInt(req.params.id);
   // Buscar el personaje con el mismo id que llaga por parametro con el metodo find

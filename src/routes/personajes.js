@@ -2,18 +2,18 @@ import { Router } from "express";
 import {
   borrarPersonajes,
   crearPersonajes,
-  getPersonajes,
-  getPersonajesById,
+  obtenerPersonajes,
+  obtenerPersonajesPorId,
   modificarPersonajes,
 } from "../controllers/personajes.js";
 
 export const personajesRouter = Router();
 
 // Obtener todos los usuarios
-personajesRouter.get("/", getPersonajes);
+personajesRouter.get("/", obtenerPersonajes);
 
 // Obtener un usuario por su id
-personajesRouter.get("/:id", getPersonajesById);
+personajesRouter.get("/:id", obtenerPersonajesPorId);
 
 // Crear un usuario
 personajesRouter.post("/", crearPersonajes);
